@@ -11,7 +11,7 @@ local lp = game:GetService("Players").LocalPlayer
 --              WHITELIST SYSTEM
 -- ==========================================
 local WhitelistedUsers = {
-    "fathanfathu", -- Put your EXACT username here
+    "AKUKECIL14", -- Put your EXACT username here
     "AKUKECIL14",      -- You can add more people like this
 }
 
