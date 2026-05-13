@@ -4,6 +4,36 @@
 --this is private anyways why am i writing this
 
 --https://docs.sirius.menu/rayfield
+
+local lp = game:GetService("Players").LocalPlayer
+
+-- ==========================================
+--              WHITELIST SYSTEM
+-- ==========================================
+local WhitelistedUsers = {
+    "fathanfathu", -- Put your EXACT username here
+    "AKUKECIL14",      -- You can add more people like this
+}
+
+local function isWhitelisted(user)
+    for _, name in pairs(WhitelistedUsers) do
+        if name == user then
+            return true
+        end
+    end
+    return false
+end
+
+-- Check if the player is allowed to use this
+if not isWhitelisted(lp.Name) then
+    lp:Kick("\n[KillBot248]\nAccess Denied: You are not whitelisted.")
+    return -- This stops the rest of the script from executing
+end
+
+-- --------------------
+--   RAYFIELD WINDOW 
+-- --------------------
+
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -54,7 +84,7 @@ Rayfield:Notify({
 })
 
 -- --------------------
--- ---- MAIN TAB ------
+--      MAIN TAB
 -- --------------------
 
 
@@ -289,7 +319,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Purchasing"):InvokeServer(unp
 local Tab = Window:CreateTab("og shit", 4483362458) -- Title, Image
 
 -- --------------------
--- ----- OG TAB -------
+--       OG TAB
 -- --------------------
 
 
@@ -380,7 +410,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Purchasing"):InvokeServer(unp
 local Tab = Window:CreateTab("1B Tools", 4483362458) -- Title, Image
 
 -- --------------------
--- ----- 1B TAB -------
+--       1B TAB
 -- --------------------
 
 local Button = Tab:CreateButton({
@@ -507,7 +537,7 @@ local Tab = Window:CreateTab("RISKY WEAPONS", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("some of these is dangerous (like laser scythe, infinity gauntlet and redstone sword)")
 
 -- --------------------
--- ----- DANGEROUS ITEMS TAB -------
+--  DANGEROUS ITEMS
 -- --------------------
 
 
